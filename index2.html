@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projetos - Carrossel Moderno</title>
+
+    <style>
+        /* ==================== BACKGROUND ANIMADO NEON ==================== */
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #0f0f0f, #25003a, #001f3f, #003a1f);
+            background-size: 400% 400%;
+            animation: neonBG 12s ease infinite;
+            overflow-x: hidden;
+        }
+
+        @keyframes neonBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ==================== VARIÁVEIS ==================== */
+        :root {
+            --card-glass: rgba(255, 255, 255, 0.07);
+            --text-dim: #cfcfcf;
+            --radius: 18px;
+            --primary: #4a90e2;
+            --shadow: 0 0 30px rgba(0, 0, 0, 0.55);
+        }
+
+        /* ==================== SIDEBAR DE CATEGORIAS ==================== */
+        .sidebar-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            padding: 12px 18px;
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+            z-index: 999;
+        }
+
+        .sidebar-container {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 230px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(8px);
+            padding: 30px 20px;
+            transition: 0.4s;
+            z-index: 9999;
+        }
+
+        .sidebar-container h3 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar-container button {
+            width: 100%;
+            margin-bottom: 12px;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sidebar-container button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ==================== CONTAINER ==================== */
+        .container {
+            padding: 80px 20px;
+            text-align: center;
+            animation: fadeIn 1s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 2.7rem;
+            margin-bottom: 20px;
+        }
+
+        .Home {
+            position: fixed;
+            top: 20px;
+            left: 150px;
+            padding: 12px 18px;
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+            z-index: 999;
+        }
+
+        /* ==================== CARROSSEL ==================== */
+        .carousel {
+            width: 92%;
+            max-width: 950px;
+            margin: auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Setas */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.6rem;
+            padding: 12px;
+            cursor: pointer;
+            user-select: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(4px);
+            transition: 0.3s;
+        }
+
+        .arrow:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        #left {
+            left: -55px;
+        }
+
+        #right {
+            right: -55px;
+        }
+
+        /* CARD */
+        .card {
+            width: 100%;
+            background: var(--card-glass);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(12px);
+            transition: 0.4s;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+            transition: 0.3s;
+        }
+
+        .card img:hover {
+            transform: scale(1.03);
+        }
+
+        .desc {
+            color: var(--text-dim);
+        }
+
+        .project-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #4a90e2;
+            border: none;
+            color: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .project-btn:hover {
+            background: #72b4ff;
+            transform: scale(1.05);
+        }
+
+        /* ==================== RESPONSIVIDADE ==================== */
+        @media (max-width: 650px) {
+            .card {
+                width: 50vw;
+                height: 40vw;
+                margin-left: auto;
+                margin-right: auto;
+                
+            }
+
+            .arrow {
+                margin-right: 30px;
+                margin-left: 30px;
+            }
+        }
+
+        @media (min-width: 700px) {
+            .card {
+                width: 30vw;
+                height: 24vw;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <button class="sidebar-btn" onclick="toggleSidebar()">Categorias</button>
+    
+    
+    <button class="Home" onclick="home()">Home</button></a>
+
+    <div class="sidebar-container" id="sidebar">
+        <button class="sidebar-btn1" onclick="toggleSidebar()">Fechar</button>
+
+        <h3>Filtros</h3>
+        <button onclick="filtro('todos')">Todos</button>
+        <button onclick="filtro('site')">Sites</button>
+        <button onclick="filtro('app')">Aplicativos</button>
+        <button onclick="filtro('design')">Design</button>
+    </div>
+
+    <div class="container">
+        <h1>Meus Projetos</h1>
+
+        <div class="carousel">
+            <div id="left" class="arrow">&#10094;</div>
+
+            <div class="card">
+                <img id="project-img" src="">
+                <h2 id="project-title"></h2>
+                <p id="project-desc" class="desc"></p>
+                <button id="project-btn" class="project-btn" target="_blank">Ver projeto</button>
+            </div>
+
+            <div id="right" class="arrow">&#10095;</div>
+        </div>
+    </div>
+</body>
+<script src="javascript.js"></script>
+
+</html>

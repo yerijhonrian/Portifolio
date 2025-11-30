@@ -1,0 +1,170 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background: linear-gradient(120deg, #111, #1a1a1a);
+  overflow-x: hidden;
+}
+
+/* ===== GRADIENTE ANIMADO ===== */
+.bg-animado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #000000, #5500ff, #000000);
+  background-size: 600% 600%;
+  z-index: -1;
+  animation: gradMov 10s ease infinite;
+}
+
+@keyframes gradMov {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+.nickname {
+  margin-left: 50px;
+  font-size: 20px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding: 120px 50px;
+  max-width: 700px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+.hero .btns {
+  margin-top: 30px;
+}
+
+.btns a {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 12px 25px;
+  border-radius: 8px;
+  background: #ffffff22;
+  backdrop-filter: blur(10px);
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btns a:hover {
+  background: #ffffff44;
+}
+
+
+/* ===== SERVIÇOS ===== */
+.servicos {
+  padding: 80px 50px;
+}
+
+.servicos h2 {
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  padding: 25px;
+  background: #ffffff10;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: #ffffff20;
+}
+
+.Joel {
+  border-radius: 100px;
+  height: 100px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+}
+
+.Joel:hover {
+  cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  margin-top: 60px;
+  text-align: center;
+  padding: 30px;
+  opacity: 0.7;
+}
+
+@media (max-width: 650px) {
+  nav a {
+    display: block;
+    padding-block: 5px;
+  }
+
+  .btns a {
+    padding: 10px;
+  }
+
+}
