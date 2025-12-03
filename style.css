@@ -326,7 +326,8 @@ footer {
   }
 
   .nickname h1 {
-    margin-left: 20px;
+   
+    margin-left: 30vw;
     margin-top: 30px;
   }
 
@@ -339,17 +340,22 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+    margin-top: 10vh;
   }
 }
 
 @media(max-width: 420px) {
   nav {
-    right: 10px;
-    top: 130px;
+    left: 9vw;
+    top: 100px;
     gap: 8px;
   }
 
   .hero h2 {
     font-size: 2.3rem;
+  }
+
+  .btns {
+    margin-top: 10vh;
   }
 }

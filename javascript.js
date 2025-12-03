@@ -1,7 +1,14 @@
 /* ==================== PROJETOS ==================== */
 const projetos = [
     {
-        titulo: "Landing Page Moderna",
+        titulo: "Landing Page Burguer",
+        desc: "Um site cardápio, rápido e totalmente responsivo.",
+        img: "./img/DevBurguer.png",
+        link: "https://joel-rian.github.io/PAGE.HAMBURGUER/",
+        categoria: "site"
+    },
+    {
+        titulo: "Landing Page Mario",
         desc: "Um site moderno, rápido e totalmente responsivo.",
         img: "./img/Landing-Page.png",
         link: "https://joel-rian.github.io/Mario-And-Luidi/",

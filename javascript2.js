@@ -1,4 +1,4 @@
-const palavras = ["Serviços", "Portfólio", "Contato", "Orçamento"];
+const palavras = ["Serviços", "Manuteção", "Websites", "Páginas"];
 
 // Seleciona o primeiro link dentro da tag <nav>
 const linkAnimado = document.querySelector('nav a:first-child');
