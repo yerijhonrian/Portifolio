@@ -22,24 +22,32 @@ body {
 /* ============================================================
    ELEMENTOS PRINCIPAIS (Header, Hero, Seções)
 ============================================================ */
+.header {
+  width: 100%;
+  padding: 25px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
 .nickname h1 {
-  font-size: 2.2rem;
+  margin: 0;
+  font-size: 2rem;
   font-weight: 600;
-  margin-left: 60px;
-  margin-top: 50px;
   color: #cfe8ff;
   text-shadow: 0 0 5px rgba(0, 180, 255, 0.4);
 }
 
 nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(2, auto);
-  grid-auto-flow: column;
+  display: flex;
+  align-items: center;
   gap: 25px;
-  position: absolute;
-  top: 70px;
-  right: 60px;
 }
 
 nav a {
@@ -60,12 +68,22 @@ nav a:hover {
   border-color: rgba(0, 200, 255, 0.5);
   transform: scale(1.05);
 }
-
-.hero {
-  padding: 140px 60px;
-  max-width: 700px;
+/* HERO EM 2 COLUNAS */
+.heromae {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+  padding: 50px 60px;
 }
 
+/* COLUNA DE TEXTO */
+.hero {
+  max-width: 600px;
+  padding-top: 300px;
+}
+
+/* TÍTULO */
 .hero h2 {
   font-size: 3rem;
   font-weight: 700;
@@ -73,6 +91,7 @@ nav a:hover {
   text-shadow: 0 0 6px rgba(0, 180, 255, 0.4);
 }
 
+/* PARÁGRAFOS */
 .hero p {
   margin-top: 15px;
   font-size: 1.25rem;
@@ -80,6 +99,7 @@ nav a:hover {
   color: #c6e6ff;
 }
 
+/* BOTÕES */
 .btns {
   margin-top: 20px;
 }
@@ -99,6 +119,33 @@ nav a:hover {
 .btns a:hover {
   background: rgba(0, 150, 255, 0.3);
   transform: scale(1.05);
+}
+
+/* IMAGEM DO HERO */
+.hero-img {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Efeito meia lua */
+  -webkit-mask-image: radial-gradient(ellipse at top, white 0%, white 45%, transparent 100%);
+  mask-image: radial-gradient(ellipse at top, white 0%, white 50%, transparent 100%);
+}
+
+.hero-img img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  
+}
+
+
+/* Hero responsivo */
+@media (max-width: 900px) {
+  .hero-img {
+    display: none;
+  }
 }
 
 /* Estilos Padrão das Seções */
@@ -279,24 +326,11 @@ nav a:hover {
 /* ============================================================
    FOOTER & ELEMENTOS FIXOS
 ============================================================ */
-.Joel {
-  border-radius: 50%;
-  height: 80px; /* Reduzido para telas menores */
-  width: 80px;  /* Reduzido para telas menores */
-  object-fit: cover;
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  border: 2px solid rgba(0, 140, 255, 0.55);
-  box-shadow: 0 0 12px rgba(0, 150, 255, 0.4);
-  transition: 0.25s;
-  z-index: 100;
-}
+/* ============================================================
+   FOTO DO HERO - LADO DIREITO + FADE-OUT + FLOAT EFFECT
+============================================================ */
 
-.Joel:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
+
 
 footer {
   margin-top: 60px;
@@ -479,3 +513,149 @@ footer {
     transform: none;
   }
 }
+
+/* ============================================================
+   RESPONSIVIDADE TOTAL — CORRIGIDA E OTIMIZADA
+============================================================ */
+
+/* LAPTOPS E TABLETS GRANDES (até 1100px) */
+@media (max-width: 1100px) {
+  .heromae {
+    padding-top: 180px;
+    gap: 40px;
+  }
+
+  .hero h2 {
+    font-size: 2.8rem;
+  }
+
+  .hero-img {
+    width: 300px;
+  }
+}
+
+/* TABLETS (até 900px) */
+@media (max-width: 900px) {
+  .heromae {
+    flex-direction: column;
+    text-align: center;
+    padding: 150px 40px 80px;
+  }
+
+  .hero {
+    padding-top: 0;
+    max-width: 100%;
+  }
+
+  .hero-img {
+    display: block;
+    width: 260px;
+  }
+
+  .hero p {
+    font-size: 1.15rem;
+  }
+
+  .btns {
+    justify-content: center;
+  }
+}
+
+/* CELULARES GRANDES (até 768px) */
+@media (max-width: 768px) {
+  .header {
+    padding: 20px;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  nav a {
+    padding: 8px 12px;
+  }
+
+  .heromae {
+    padding: 140px 25px 60px;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero-img {
+    width: 230px;
+  }
+
+  .btns {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .btns a {
+    width: 100%;
+    max-width: 300px;
+    margin-right: 0;
+  }
+}
+
+/* CELULARES NORMAIS (até 480px) */
+@media (max-width: 480px) {
+
+  .nickname h1 {
+    font-size: 1.6rem;
+  }
+
+  nav {
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+    padding: 7px 10px;
+  }
+
+  .heromae {
+    padding: 200px 20px 50px;
+  }
+
+  .hero h2 {
+    font-size: 1.9rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-img {
+    width: 200px;
+  }
+
+  .projetos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+/* CELULARES PEQUENOS (até 360px) */
+@media (max-width: 360px) {
+  .hero h2 {
+    font-size: 1.7rem;
+  }
+
+  .hero-img {
+    width: 170px;
+  }
+
+  .btns a {
+    font-size: 0.85rem;
+    padding: 10px 15px;
+  }
+}
+
