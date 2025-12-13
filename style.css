@@ -551,7 +551,7 @@ footer {
   }
 
   .hero {
-    padding-top: 0;
+    padding-top: 50px;
     max-width: 100%;
   }
 
@@ -651,8 +651,11 @@ footer {
   }
 }
 
-/* CELULARES PEQUENOS (até 360px) */
-@media (max-width: 360px) {
+/* CELULARES PEQUENOS (até 394px) */
+@media (max-width: 394px) {
+  .hero {
+    padding-top: 100px;
+  }
   .hero h2 {
     font-size: 1.7rem;
   }
@@ -667,3 +670,8 @@ footer {
   }
 }
 
+@media (max-width: 348px) {
+  .hero {
+    padding-top: 150px;
+  }
+}
