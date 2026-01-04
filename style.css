@@ -329,15 +329,6 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
-/* ============================================================
-   FOOTER & ELEMENTOS FIXOS
-============================================================ */
-/* ============================================================
-   FOTO DO HERO - LADO DIREITO + FADE-OUT + FLOAT EFFECT
-============================================================ */
-
-
-
 footer {
   margin-top: 60px;
   text-align: center;
@@ -691,8 +682,6 @@ body.sidebar-open {
     bottom: 15px;
   }
 }
-
-
 
 /* ============================================================
    RESPONSIVIDADE TOTAL — CORRIGIDA E OTIMIZADA
